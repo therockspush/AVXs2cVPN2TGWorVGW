@@ -53,8 +53,8 @@ curl -s -k --location --request POST "https://$ControllerIP/v1/api" \
 --form "local_tunnel_ip=${CGW1[1]},${CGW2[1]}" \
 --form 'routing_protocol=bgp' \
 --form 'tunnel_protocol=IPsec' \
---form 'external_device_as_number=64512' \
---form 'bgp_local_as_number=65000' \
+--form "external_device_as_number=${ASN[0]}" \
+--form "bgp_local_as_number=${CGW1[2]}" \
 --form 'direct_connect=false' \
 --form "remote_tunnel_ip=${VPG1[1]},${VPG2[1]}" \
 --form "CID=$CID"
